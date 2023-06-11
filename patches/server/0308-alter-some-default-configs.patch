@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: JamieOnSootMC <jamie@sootmc.net>
+Date: Sun, 11 Jun 2023 15:49:29 +0100
+Subject: [PATCH] alter some default configs
+
+
+diff --git a/src/main/java/org/purpurmc/purpur/PurpurConfig.java b/src/main/java/org/purpurmc/purpur/PurpurConfig.java
+index 54df5c8d57947115e4e5505fda90bb4b0217f0a8..dfc5ba7eb7657cce56e8214420865bd87aa3857d 100644
+--- a/src/main/java/org/purpurmc/purpur/PurpurConfig.java
++++ b/src/main/java/org/purpurmc/purpur/PurpurConfig.java
+@@ -118,7 +118,7 @@ public class PurpurConfig {
+         try {
+             config.save(CONFIG_FILE);
+         } catch (IOException ex) {
+-            Bukkit.getLogger().log(Level.SEVERE, "Could not save " + CONFIG_FILE, ex);
++            log(Level.SEVERE, "Could not save " + CONFIG_FILE, ex);
+         }
+     }
+ 
+@@ -217,7 +217,7 @@ public class PurpurConfig {
+         deathMsgStonecutter = getString("settings.messages.death-message.stonecutter", deathMsgStonecutter);
+     }
+ 
+-    public static boolean advancementOnlyBroadcastToAffectedPlayer = false;
++    public static boolean advancementOnlyBroadcastToAffectedPlayer = true; // SootMC
+     public static boolean deathMessageOnlyBroadcastToAffectedPlayer = false;
+     private static void broadcastSettings() {
+         if (version < 13) {

@@ -1,0 +1,19 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: JamieOnSootMC <jamie@sootmc.net>
+Date: Sun, 11 Jun 2023 14:53:13 +0100
+Subject: [PATCH] use internal log method
+
+
+diff --git a/src/main/java/org/purpurmc/purpur/PurpurConfig.java b/src/main/java/org/purpurmc/purpur/PurpurConfig.java
+index be8b44daa0141151c973917a774aa07721647ed1..54df5c8d57947115e4e5505fda90bb4b0217f0a8 100644
+--- a/src/main/java/org/purpurmc/purpur/PurpurConfig.java
++++ b/src/main/java/org/purpurmc/purpur/PurpurConfig.java
+@@ -109,7 +109,7 @@ public class PurpurConfig {
+                     } catch (InvocationTargetException ex) {
+                         throw Throwables.propagate(ex.getCause());
+                     } catch (Exception ex) {
+-                        Bukkit.getLogger().log(Level.SEVERE, "Error invoking " + method, ex);
++                        log(Level.SEVERE, "Error invoking " + method, ex);
+                     }
+                 }
+             }

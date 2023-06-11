@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: JamieOnSootMC <jamie@sootmc.net>
+Date: Sun, 11 Jun 2023 15:57:52 +0100
+Subject: [PATCH] uwu
+
+
+diff --git a/src/main/java/org/purpurmc/purpur/PurpurConfig.java b/src/main/java/org/purpurmc/purpur/PurpurConfig.java
+index d40357101535a63b3b40d7d48f35146910348505..4f5305c41750a7e45fb63bb25ecaee09ae3cbb04 100644
+--- a/src/main/java/org/purpurmc/purpur/PurpurConfig.java
++++ b/src/main/java/org/purpurmc/purpur/PurpurConfig.java
+@@ -109,7 +109,7 @@ public class PurpurConfig {
+                     } catch (InvocationTargetException ex) {
+                         throw Throwables.propagate(ex.getCause());
+                     } catch (Exception ex) {
+-                        this.log(Level.SEVERE, "Error invoking " + method + ex);
++                        log(Level.SEVERE, "Error invoking " + method + ex);
+                     }
+                 }
+             }
+@@ -118,7 +118,7 @@ public class PurpurConfig {
+         try {
+             config.save(CONFIG_FILE);
+         } catch (IOException ex) {
+-            this.log(Level.SEVERE, "Could not save " + CONFIG_FILE + ex);
++            log(Level.SEVERE, "Could not save " + CONFIG_FILE + ex);
+         }
+     }
+ 

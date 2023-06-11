@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: JamieOnSootMC <jamie@sootmc.net>
+Date: Sun, 11 Jun 2023 15:53:13 +0100
+Subject: [PATCH] fix compile error
+
+
+diff --git a/src/main/java/org/purpurmc/purpur/PurpurConfig.java b/src/main/java/org/purpurmc/purpur/PurpurConfig.java
+index dfc5ba7eb7657cce56e8214420865bd87aa3857d..d40357101535a63b3b40d7d48f35146910348505 100644
+--- a/src/main/java/org/purpurmc/purpur/PurpurConfig.java
++++ b/src/main/java/org/purpurmc/purpur/PurpurConfig.java
+@@ -109,7 +109,7 @@ public class PurpurConfig {
+                     } catch (InvocationTargetException ex) {
+                         throw Throwables.propagate(ex.getCause());
+                     } catch (Exception ex) {
+-                        log(Level.SEVERE, "Error invoking " + method, ex);
++                        this.log(Level.SEVERE, "Error invoking " + method + ex);
+                     }
+                 }
+             }
+@@ -118,7 +118,7 @@ public class PurpurConfig {
+         try {
+             config.save(CONFIG_FILE);
+         } catch (IOException ex) {
+-            log(Level.SEVERE, "Could not save " + CONFIG_FILE, ex);
++            this.log(Level.SEVERE, "Could not save " + CONFIG_FILE + ex);
+         }
+     }
+ 
